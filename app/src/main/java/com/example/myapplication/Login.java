@@ -10,8 +10,11 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Login extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
     private EditText eUsername;
     private EditText ePassword;
     private CheckBox eRemember;
@@ -28,6 +31,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        mAuth = FirebaseAuth.getInstance();
 
         eUsername = findViewById(R.id.editUsername);
         ePassword = findViewById(R.id.editPassword);
